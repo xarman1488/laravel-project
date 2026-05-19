@@ -21,7 +21,7 @@ class CreateAttachmentsTable extends Migration
             $table->integer('size');
         });
     }
-//dasdasdasdasdasdasrasdsjnnjsdad
+//dasdasdasdasdasdasrasdsjnnjsdadss
     /**
      * Reverse the migrations.
      *
