@@ -28,7 +28,7 @@
                 @error('mime_type') <p style="color: red; font-size: 14px; margin: 5px 0 0 0;">{{ $message }}</p> @enderror
             </div>
         </div>
-
+/
         <div style="margin-bottom: 20px;">
             <label style="display: block; font-weight: bold; margin-bottom: 5px;">Описание документа</label>
             <textarea name="description" rows="3" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">{{ old('description') }}</textarea>

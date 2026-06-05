@@ -16,7 +16,7 @@
             <textarea name="description" rows="4" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">{{ old('description', $task->description) }}</textarea>
             @error('description') <p style="color: red; font-size: 14px; margin: 5px 0 0 0;">{{ $message }}</p> @enderror
         </div>
-
+/
         <div style="display: flex; gap: 15px; margin-bottom: 15px;">
             <div style="flex: 1;">
                 <label style="display: block; font-weight: bold; margin-bottom: 5px;">Статус</label>
