@@ -14,10 +14,10 @@ use App\Http\Controllers\AttachmentController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::middleware('auth')->group(function (){
-   Route::get('/dashboard', [ProfileController::class, 'dashboard'])->name('dashboard');
-   Route::post('logout', [AuthController::class, 'logout'])->name('logout');
-});
+//Route::middleware('auth')->group(function (){
+//   Route::get('/dashboard', [ProfileController::class, 'dashboard'])->name('dashboard');
+//   Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+//});
 
 Route::get('/', function () {
     return view('welcome');
