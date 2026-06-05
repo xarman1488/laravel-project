@@ -21,6 +21,6 @@ class EnsureIsAuthenticated
             return  redirect()->route('login')
                 ->with('error','Для доступа к этой странице необходимо войти в систему');
         }
-        return $next($request);ч1
+        return $next($request);
     }
 }
