@@ -15,13 +15,14 @@ class CreateAttachmentsTable extends Migration
     {
         Schema::create('attachments', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('file_name');
             $table->string('file_path');
-            $table->string('mime_type');
-            $table->integer('size');
+            $table->integer('file_size')->nullable();
+            $table->string('mime_type')->nullable();
+            $table->text('description')->nullable();
+            $table->timestamps();
         });
     }
-//dasdasdasdasdasdasrasdsjnnjsdadss
     /**
      * Reverse the migrations.
      *
