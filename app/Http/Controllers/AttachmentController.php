@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attachment;
+use App\Services\AttachmentService;
 use Illuminate\Http\Request;
 
 class AttachmentController extends Controller
 {
+    protected AttachmentService $attachmentService;
+
+    public function __construct(AttachmentService $attachmentService)
+    {
+        $this->attachmentService = $attachmentService;
+    }
+
     public function index()
     {
         $attachments = Attachment::all();
