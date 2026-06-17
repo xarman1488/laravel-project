@@ -23,13 +23,12 @@ class TaskController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'status' => 'nullable|string',
+            'status' => 'required|string',
             'priority' => 'nullable|string',
             'due_date' => 'nullable|date',
         ]);
 
         Task::create($validated);
-
         return redirect()->route('tasks.index')->with('success', 'Задача создана!');
     }
 
@@ -48,21 +47,18 @@ class TaskController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'status' => 'nullable|string',
+            'status' => 'required|string',
             'priority' => 'nullable|string',
             'due_date' => 'nullable|date',
         ]);
 
         $task->update($validated);
-
         return redirect()->route('tasks.index')->with('success', 'Задача обновлена!');
     }
 
     public function destroy(Task $task)
     {
         $task->delete();
-
         return redirect()->route('tasks.index')->with('success', 'Задача удалена!');
     }
 }
-
