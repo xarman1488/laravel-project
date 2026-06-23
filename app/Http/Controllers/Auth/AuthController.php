@@ -32,12 +32,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect()->intended(route('home'));
-    }
-
-    public function showLoginForm()
-    {
-        return view('auth.login');
+        return redirect()->intended(route('dashboard')); // Изменено
     }
 
     public function login(Request $request)
@@ -49,12 +44,18 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials, $request->filled('remember'))) {
             $request->session()->regenerate();
-            return redirect()->intended(route('home'));
+
+            return redirect()->intended(route('dashboard')); // Изменено
         }
 
         throw ValidationException::withMessages([
             'email' => __('auth.failed'),
         ]);
+    }
+
+    public function showLoginForm()
+    {
+        return view('auth.login');
     }
 
     public function logout(Request $request)

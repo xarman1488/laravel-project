@@ -30,6 +30,14 @@
             @auth
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('dashboard') }}">Главная</a>
+                    </li>
+                    @if(Auth::user()->is_admin)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.requests.index') }}">Запросы (Админ)</a>
+                        </li>
+                    @endif
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('tasks.index') }}">Задачи</a>
                     </li>
                     <li class="nav-item">
@@ -53,8 +61,6 @@
                 @endauth
             </div>
         </div>
-    </div>
-</nav>
 
 <main class="py-4">
     @yield('content')
